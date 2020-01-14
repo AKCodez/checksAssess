@@ -12,9 +12,12 @@ db.once('open', () => {
 });
 
 const listingSchema = new mongoose.Schema({
-  Cid: {type:Number, index:true},
-  longitude: Number,
-  latitude: Number
+  coordinate: {
+    longitude: Number,
+    latitude: Number
+  }
+
+  
 });
 
 module.exports.coordinates = mongoose.model('coordinates', listingSchema);
